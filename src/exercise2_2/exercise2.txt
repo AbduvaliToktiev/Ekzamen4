@@ -1,0 +1,14 @@
+create table "ekzamen4".news(
+                                id serial unique,
+                                news_headline varchar not null,
+                                text_news varchar not null,
+                                time_news timestamp not null default current_timestamp
+);
+
+insert into "ekzamen4".news (news_headline, text_news) values (?, ?);
+
+select news_headline as заголовок, text_news as текст from "ekzamen4".news;
+
+delete from "ekzamen4".news where id = ?;
+
+update "ekzamen4".news set news_headline = ?, text_news = ? where id = ?
